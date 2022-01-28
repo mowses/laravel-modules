@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
+use Nwidart\Modules\Extends\Migration;
 
 class $CLASS$ extends Migration
 {
@@ -13,7 +12,7 @@ class $CLASS$ extends Migration
      */
     public function up()
     {
-        Schema::table('$TABLE$', function (Blueprint $table) {
+        static::schema()->table('$TABLE$', function (Blueprint $table) {
 $FIELDS_UP$
         });
     }
@@ -25,7 +24,7 @@ $FIELDS_UP$
      */
     public function down()
     {
-        Schema::table('$TABLE$', function (Blueprint $table) {
+        static::schema()->table('$TABLE$', function (Blueprint $table) {
 $FIELDS_DOWN$
         });
     }

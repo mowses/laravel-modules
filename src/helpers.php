@@ -34,3 +34,22 @@ if (! function_exists('public_path')) {
         return app()->make('path.public') . ($path ? DIRECTORY_SEPARATOR . ltrim($path, DIRECTORY_SEPARATOR) : $path);
     }
 }
+
+if (! function_exists('module_class')) {
+    /**
+     * Get the module instance based on the path of any class.
+     *
+     * @param  string  $class
+     * @return Module|null
+     */
+    function module_class($class = '')
+    {
+        $filename = optional(new \ReflectionClass($class))->getFileName();
+        
+        if (!$filename) return;
+
+        return Module::toCollection()->first(function(Module $module) use ($filename) {
+            return str_starts_with($filename, $module->getPath() . DIRECTORY_SEPARATOR);
+        });
+    }
+}

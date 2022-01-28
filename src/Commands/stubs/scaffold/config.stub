@@ -1,5 +1,17 @@
 <?php
 
 return [
-    'name' => '$STUDLY_NAME$'
+    'name' => '$STUDLY_NAME$',
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Module connection
+    |--------------------------------------------------------------------------
+    |
+    | If you want your module to use a custom connection, maybe migrate to
+    | another schema, you may pass the connection string here.
+    |
+    */
+    
+    'connection' => null,
 ];

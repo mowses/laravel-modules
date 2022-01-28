@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
+use Nwidart\Modules\Extends\Migration;
 
 class $CLASS$ extends Migration
 {
@@ -13,7 +12,7 @@ class $CLASS$ extends Migration
      */
     public function up()
     {
-        Schema::create('$TABLE$', function (Blueprint $table) {
+        static::schema()->create('$TABLE$', function (Blueprint $table) {
             $table->id();
 $FIELDS$
             $table->timestamps();
@@ -27,6 +26,6 @@ $FIELDS$
      */
     public function down()
     {
-        Schema::dropIfExists('$TABLE$');
+        static::schema()->dropIfExists('$TABLE$');
     }
 }
