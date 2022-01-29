@@ -9,14 +9,13 @@ class Migration extends MigrationBase
 {
     public function __construct()
     {
-        $module = optional(module_class(static::class));
-
-        $this->connection = config($module->getLowerName() . '.connection');
-
-        return parent::__construct(...func_get_args());
+        if ($this->connection === null) {
+            $module = optional(module_class(static::class));
+            $this->connection = config($module->getLowerName() . '.connection');
+        }
     }
 
-    static public function schema()
+    public function schema()
     {
         return Schema::connection($this->connection);
     }

@@ -12,7 +12,7 @@ class $CLASS$ extends Migration
      */
     public function up()
     {
-        static::schema()->dropIfExists('$TABLE$');
+        $this->schema()->dropIfExists('$TABLE$');
     }
 
     /**
@@ -22,7 +22,7 @@ class $CLASS$ extends Migration
      */
     public function down()
     {
-        static::schema()->create('$TABLE$', function (Blueprint $table) {
+        $this->schema()->create('$TABLE$', function (Blueprint $table) {
             $table->bigIncrements('id');
 $FIELDS$
             $table->timestamps();

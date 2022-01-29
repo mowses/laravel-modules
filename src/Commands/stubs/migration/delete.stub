@@ -12,7 +12,7 @@ class $CLASS$ extends Migration
      */
     public function up()
     {
-        static::schema()->table('$TABLE$', function (Blueprint $table) {
+        $this->schema()->table('$TABLE$', function (Blueprint $table) {
 $FIELDS_UP$
         });
     }
@@ -24,7 +24,7 @@ $FIELDS_UP$
      */
     public function down()
     {
-        static::schema()->table('$TABLE$', function (Blueprint $table) {
+        $this->schema()->table('$TABLE$', function (Blueprint $table) {
 $FIELDS_DOWN$
         });
     }

@@ -12,7 +12,7 @@ class $CLASS$ extends Migration
      */
     public function up()
     {
-        static::schema()->create('$TABLE$', function (Blueprint $table) {
+        $this->schema()->create('$TABLE$', function (Blueprint $table) {
             $table->id();
 $FIELDS$
             $table->timestamps();
@@ -26,6 +26,6 @@ $FIELDS$
      */
     public function down()
     {
-        static::schema()->dropIfExists('$TABLE$');
+        $this->schema()->dropIfExists('$TABLE$');
     }
 }

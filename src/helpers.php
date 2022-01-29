@@ -48,7 +48,7 @@ if (! function_exists('module_class')) {
         
         if (!$filename) return;
 
-        return Module::toCollection()->first(function(Module $module) use ($filename) {
+        return Module::toCollection()->first(function($module) use ($filename) {
             return str_starts_with($filename, $module->getPath() . DIRECTORY_SEPARATOR);
         });
     }
