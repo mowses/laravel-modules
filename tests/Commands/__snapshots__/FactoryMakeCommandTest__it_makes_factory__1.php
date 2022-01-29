@@ -10,7 +10,7 @@ class PostFactory extends Factory
      *
      * @var string
      */
-    protected $model = \\Modules\\Blog\\Entities\\Post::class;
+    protected $model = \\Modules\\Blog\\Models\\Post::class;
 
     /**
      * Define the model\'s default state.

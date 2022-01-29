@@ -38,7 +38,7 @@ class ModelMakeCommandTest extends BaseTestCase
     {
         $code = $this->artisan('module:make-model', ['model' => 'Post', 'module' => 'Blog']);
 
-        $this->assertTrue(is_file($this->modulePath . '/Entities/Post.php'));
+        $this->assertTrue(is_file($this->modulePath . '/Models/Post.php'));
         $this->assertSame(0, $code);
     }
 
@@ -47,7 +47,7 @@ class ModelMakeCommandTest extends BaseTestCase
     {
         $code = $this->artisan('module:make-model', ['model' => 'Post', 'module' => 'Blog']);
 
-        $file = $this->finder->get($this->modulePath . '/Entities/Post.php');
+        $file = $this->finder->get($this->modulePath . '/Models/Post.php');
 
         $this->assertMatchesSnapshot($file);
         $this->assertSame(0, $code);
@@ -58,7 +58,7 @@ class ModelMakeCommandTest extends BaseTestCase
     {
         $code = $this->artisan('module:make-model', ['model' => 'Post', 'module' => 'Blog', '--fillable' => 'title,slug']);
 
-        $file = $this->finder->get($this->modulePath . '/Entities/Post.php');
+        $file = $this->finder->get($this->modulePath . '/Models/Post.php');
 
         $this->assertMatchesSnapshot($file);
         $this->assertSame(0, $code);
@@ -179,7 +179,7 @@ class ModelMakeCommandTest extends BaseTestCase
 
         $code = $this->artisan('module:make-model', ['model' => 'Post', 'module' => 'Blog']);
 
-        $file = $this->finder->get($this->modulePath . '/Entities/Post.php');
+        $file = $this->finder->get($this->modulePath . '/Models/Post.php');
 
         $this->assertMatchesSnapshot($file);
         $this->assertSame(0, $code);

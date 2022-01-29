@@ -390,6 +390,9 @@ class ModuleGenerator extends Generator
             $this->console->call('module:route-provider', [
                 'module' => $this->getName(),
             ]);
+            $this->console->call('module:auth-provider', [
+                'module' => $this->getName(),
+            ]);
         }
 
         if (GenerateConfigReader::read('controller')->generate() === true) {

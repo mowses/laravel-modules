@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Laracasts\Flash\Flash;
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
 use Modules\Media\Repositories\FileRepository;
-use Modules\Recipe\Entities\Recipe;
+use Modules\Recipe\Models\Recipe;
 use Modules\Recipe\Repositories\RecipeRepository;
 
 class RecipeController extends AdminBaseController
